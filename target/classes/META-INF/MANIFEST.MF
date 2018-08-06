@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: sivthiag
+Build-Jdk: 1.8.0_172
+Created-By: Maven Integration for Eclipse
+Main-Class: com.testorg.learning.sample.App
+

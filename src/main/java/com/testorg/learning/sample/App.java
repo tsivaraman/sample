@@ -1,22 +1,20 @@
 package com.testorg.learning.sample;
 
 /**
- * Hello world!
+ * Sample Application !
  *
  */
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        if (args[0].equalsIgnoreCase("1"))
+        System.out.println( "Hello from Sample Application");
+        if (args!=null && args.length >= 1 )
         {
-        	System.out.println(">>>>>> Option 1");
+        	if (args[0].equalsIgnoreCase("1"))
+        		System.out.println(">>>>>> Option 1");
+        	else if (args[0].equalsIgnoreCase("2"))
+        		System.out.println(">>>>>> Option 2");
         }
-        if (args[0].equalsIgnoreCase("2"))
-        {
-        	System.out.println(">>>>>> Option 2");
-        }
-        
     }
 }
