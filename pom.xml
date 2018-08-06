@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.testorg.learning</groupId>
-  <artifactId>sample</artifactId>
+ 
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -22,4 +22,34 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+   <build>
+    <finalName>sample</finalName>
+    <plugins>
+				
+		  <!-- Set JDK Compiler Level -->
+		  <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <executable>C:\Java\jdk1.8.0_172\bin\javac</executable>
+                </configuration>
+            </plugin>
+           <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+			<configuration>
+			  <archive>
+			    <manifest>
+				<mainClass>com.testorg.learning.sample.App</mainClass>
+			    </manifest>
+			  </archive>
+			</configuration>
+		    </plugin>
+		</plugins>
+  </build>
+    <artifactId>sample</artifactId>
 </project>
