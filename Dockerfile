@@ -1,9 +1,9 @@
 #Sample Application Docker File
 FROM openjdk:8-jre-alpine
 # FROM java:8 
-# Install maven
-RUN apt-get update
-RUN apt-get install -y maven
+# Install maven. Since it is alpine based use apk instead of apt-get
+RUN apk update
+RUN apk install -y maven
 
 LABEL "maintainer"="Sivaraman"
 ENV PROFILE local
