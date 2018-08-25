@@ -1,5 +1,5 @@
 #Sample Application Docker File
-FROM java:8
+FROM openjdk:8-jre-alpine
 LABEL "maintainer"="Sivaraman"
 ENV PROFILE local
 WORKDIR /home/build
