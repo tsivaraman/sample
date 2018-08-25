@@ -1,5 +1,10 @@
 #Sample Application Docker File
 FROM openjdk:8-jre-alpine
+# FROM java:8 
+# Install maven
+RUN apt-get update
+RUN apt-get install -y maven
+
 LABEL "maintainer"="Sivaraman"
 ENV PROFILE local
 WORKDIR /home/build
