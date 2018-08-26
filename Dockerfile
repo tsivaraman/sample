@@ -8,6 +8,6 @@ RUN cd /home/jboss/ && mvn install && mv /home/jboss/target/sample.jar /home
 
 FROM openjdk:alpine
 WORKDIR /home
-RUN rm -rf /home/.m2 && rm -rf /home/jboss
+RUN rm -rf /home/.m2
 RUN ls /home
 CMD ["sh", "-c", "java -jar /home/sample.jar --spring.profiles.active=$PROFILE"]
