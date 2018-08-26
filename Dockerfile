@@ -11,6 +11,6 @@ RUN rm -rf /root/.m2
 
 FROM openjdk:alpine
 WORKDIR /deployments
-mv sample-0.0.1-SNAPSHOT.jar sample.jar
+RUN mv sample-0.0.1-SNAPSHOT.jar sample.jar
 RUN ls /deployments
 CMD ["sh", "-c", "java -jar /deployments/sample.jar --spring.profiles.active=$PROFILE"]
