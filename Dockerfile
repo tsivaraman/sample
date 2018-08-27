@@ -1,17 +1,15 @@
 # Build Sample Application Docker File
-FROM maven
-#FROM maven:alpine
+#FROM maven
+FROM maven:alpine
 LABEL "maintainer"="Sivaraman"
 ENV PROFILE local
-WORKDIR /home/app
-ADD . /home/app
+WORKDIR /home/build
+ADD . /home/build/
 COPY pom.xml .
-RUN mvn install && mv /root/.m2/repository/com/testorg/learning/sample/0.0.1-SNAPSHOT/sample-0.0.1-SNAPSHOT.jar /home/sample.jar
-#Installing /home/app/target/sample.jar to /root/.m2/repository/com/testorg/learning/sample/0.0.1-SNAPSHOT/sample-0.0.1-SNAPSHOT.jar
-RUN rm -rf /root/.m2
+RUN cd /home/build/ && mvn install && mv /home/build/target/sample.jar /home
 
-FROM java:8
-#FROM openjdk:alpine
-WORKDIR /home/app
+#FROM java:8
+FROM openjdk:alpine
+WORKDIR /home
 #RUN ls /home/app
 CMD ["sh", "-c", "java -jar /home/sample.jar --spring.profiles.active=$PROFILE"]
