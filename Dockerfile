@@ -6,7 +6,7 @@ ENV PROFILE local
 WORKDIR /home/app
 ADD . /home/app
 COPY pom.xml .
-RUN mvn install && mv /root/.m2/repository/com/testorg/learning/sample/0.0.1-SNAPSHOT/sample-0.0.1-SNAPSHOT.jar /home/app/sample.jar
+RUN mvn install && mv /root/.m2/repository/com/testorg/learning/sample/0.0.1-SNAPSHOT/sample-0.0.1-SNAPSHOT.jar /home/sample.jar
 #Installing /home/app/target/sample.jar to /root/.m2/repository/com/testorg/learning/sample/0.0.1-SNAPSHOT/sample-0.0.1-SNAPSHOT.jar
 RUN rm -rf /root/.m2
 
