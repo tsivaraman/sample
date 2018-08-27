@@ -1,5 +1,6 @@
 # Build Sample Application Docker File
-FROM maven:alpine
+FROM maven
+#FROM maven:alpine
 LABEL "maintainer"="Sivaraman"
 ENV PROFILE local
 WORKDIR /home/jboss
@@ -10,7 +11,8 @@ RUN cd /home/jboss/ && mvn install && mv /root/.m2/repository/com/testorg/learni
 RUN pwd
 RUN rm -rf /root/.m2
 
-FROM openjdk:alpine
+FROM openjre
+#FROM openjdk:alpine
 WORKDIR /deployments
 RUN ls /deployments
 CMD ["sh", "-c", "java -jar /home/sample.jar --spring.profiles.active=$PROFILE"]
