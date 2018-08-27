@@ -40,34 +40,35 @@
 	<build>
 	    <finalName>sample</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-							
-		  <!-- Set JDK Compiler Level -->
-		  <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <executable>C:\Java\jdk1.8.0_172\bin\javac</executable>
-                </configuration>
-            </plugin>
-           <plugin>
+		<plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+                <mainClass>com.testorg.learning.sample.App</mainClass>
+            </configuration>
+                <executions>
+                <execution>
+                    <goals>
+                    <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
+          <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-			<configuration>
-			  <archive>
-			    <manifest>
-				<mainClass>com.testorg.learning.sample.App</mainClass>
-			    </manifest>
-			  </archive>
-			</configuration>
+				<artifactId>maven-jar-plugin</artifactId>
+					<version>3.1.0</version>
+				<configuration>
+			  	<archive>
+			    	<manifest>
+						<mainClass>com.testorg.learning.sample.App</mainClass>
+			    	</manifest>
+			  	</archive>
+				</configuration>
 		    </plugin>
+
 		</plugins>
 	</build>
 
