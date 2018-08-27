@@ -11,7 +11,7 @@ RUN cd /home/jboss/ && mvn install && mv /root/.m2/repository/com/testorg/learni
 RUN pwd
 RUN rm -rf /root/.m2
 
-FROM openjre
+FROM java:8
 #FROM openjdk:alpine
 WORKDIR /deployments
 RUN ls /deployments
